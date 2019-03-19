@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Tip Calculator</title>
+  </head>
+  <body>
+
+<div class="container">
+  <div class="bill_calculator">
+    <h1>Tip Calculator</h1>
+    <p>Bill Amount: $ <input type="text" name="bill_amount" id="bill_input"  value=""></p>
+    <p>How was your service?
+      <select class="tip_amounts" name="">
+        <option value="" selected disabled hidden>Choose one:</option>
+        <option value="awesome">30% - Freaking Awesome!</option>
+        <option value="good">25% - Pretty Good</option>
+        <option value="ok">15% - OK</option>
+        <option value="beBetter">10% - Could've Been Better</option>
+        <option value="bad">5% - Pretty Bad</option>
+      </select>
+    </p>
+    <p>Number of people of splitting the bill: <input type="text" value="" id="num_people"></p>
+    <button type="button" name="button">CALCULATE</button>
+    <p>Tip amount for each person: </p>
+    <p class="tip_display">$ 1.75</p>
+  </div>
+</div>
+
+
+
+  </body>
+  <script src="script.js"></script>
+</html>
