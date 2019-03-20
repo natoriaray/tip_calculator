@@ -37,17 +37,45 @@ p {
 }
 
 input {
-  width: 100px;
+  width: 80px;
+  padding: 5px 5px;
+  background-color: #FBD0E6;
+  border: 2px solid #FBA0E6;
+}
+
+input:focus {
+  border: 2px solid #A8D0E6;
+}
+
+select {
+  padding: 5px 5px;
+  background-color: #FBD0E6;
+  font-family: 'Raleway';
+  border: 2px solid #FBA0E6;
 }
 
 button {
+  font-family: 'Raleway';
   position: absolute;
   display: inline-block;
   margin-top: 20px;
-  left:calc(45% - 45px);
+  left:calc(50% - 70px);
   width: 150px;
   height: 50px;
+  color: #24305e;
+  background-color: #FBD0E6;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 40%;
+  border: none;
+}
 
+button:hover {
+  background-color: #F8E96D;
+}
+
+button:active {
+  transform: translateY(5px);
 }
 
 .tip_display {
