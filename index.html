@@ -14,10 +14,10 @@
     <form id="calform">
       <p>
       <label for="bill_amount">Bill Amount: $ </label>
-      <input type="number" name="bill_amount" id="bill_input"  value="">
+      <input type="number" name="bill_amount" class="bill_input"  value="">
       </p>
       <p></p>
-      <label> How was your experience?
+      <label> How was your experience?</label>
         <select class="tip_amounts" name="dropdown">
           <option value="" selected disabled hidden>Choose one:</option>
           <option value="awesome">30% - Freaking Awesome!</option>
@@ -26,13 +26,12 @@
           <option value="beBetter">10% - Could've Been Better</option>
           <option value="bad">5% - Pretty Bad</option>
         </select>
-      </label>
       <p></p>
       <label for="numpeop">Number of people of splitting the bill:</label>
-      <input type="number" name="numpeop" value="" id="num_people">
+      <input type="number" name="numpeop" value="" class="num_people">
     </form>
 
-    <button type="button" name="calbtn" id="calbtn">CALCULATE</button>
+    <button type="button" name="calbtn" class="calbtn">CALCULATE</button>
     <div class="eachperson">
       <p>Tip amount for each person: </p>
       <p class="tip_display">$ 1.75</p>
