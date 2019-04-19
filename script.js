@@ -30,7 +30,7 @@ var UIController = (function() {
 
     calcPercentage: function() {
 
-      var DOMexperience = this.getInput.experience;
+      var DOMexperience = document.querySelector(DOMstrings.inputExperience).value;
       var percentage;
 
       if (DOMexperience === 'awesome') {
