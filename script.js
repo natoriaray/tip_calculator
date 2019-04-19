@@ -1,7 +1,8 @@
 // CALCULATE CONTROLLER
-var calculateController = (function() {
+var calculateController = (function(UICtrl) {
 
-})();
+
+})(UIController);
 
 // UI CONTROLLER
 var UIController = (function() {
@@ -25,6 +26,28 @@ var UIController = (function() {
 
     getDOMstrings: function() {
       return DOMstrings;
+    },
+
+    calcPercentage: function() {
+
+      var DOMexperience = this.getInput.experience;
+      var percentage;
+
+      if (DOMexperience === 'awesome') {
+        percentage = .30;
+      } else if (DOMexperience === 'good') {
+        percentage = .25;
+      } else if (DOMexperience === 'ok') {
+        percentage = .15;
+      } else if (DOMexperience === 'beBetter') {
+        percentage = .10;
+      } else if (DOMexperience === 'bad') {
+        percentage = .05;
+      } else {
+        percentage = 0;
+      }
+
+      return percentage;
     },
 
     testing: function() {
@@ -54,9 +77,11 @@ var controller = (function(calcCtrl, UICtrl) {
 
     // 1. Get input from fields
     input = UICtrl.getInput();
-    
+    console.log(input);
     // 2. Calculate tip for each person
-
+    percent = UICtrl.calcPercentage();
+    console.log(percent);
+    //tip = calculateController.calcTip(input.billAmount, input.experience, input.numberOfPeople);
     // 3. Display the tip on UI
 
   };
