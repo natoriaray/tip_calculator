@@ -1,6 +1,14 @@
 // CALCULATE CONTROLLER
 var calculateController = (function(UICtrl) {
 
+  return {
+    calcTip: function(bill, expPercentage, numPeople) {
+      var totalTip;
+
+      totalTip = parseInt(bill) * expPercentage;
+      return totalTip / parseInt(numPeople);
+    }
+  };
 
 })(UIController);
 
@@ -73,15 +81,17 @@ var controller = (function(calcCtrl, UICtrl) {
   };
 
   var calculateTip = function() {
-    var input;
+    var input, tip;
 
     // 1. Get input from fields
     input = UICtrl.getInput();
     console.log(input);
+    
     // 2. Calculate tip for each person
     percent = UICtrl.calcPercentage();
     console.log(percent);
-    //tip = calculateController.calcTip(input.billAmount, input.experience, input.numberOfPeople);
+    tip = calculateController.calcTip(input.billAmount, percent, input.numberOfPeople);
+    console.log(tip);
     // 3. Display the tip on UI
 
   };
