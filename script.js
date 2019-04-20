@@ -19,7 +19,8 @@ var UIController = (function() {
     inputBillAmount: '.bill_input',
     inputExperience: '.experience_input',
     inputNumberOfPeople: '.num_people',
-    button: '.cal_btn'
+    button: '.cal_btn',
+    tipDisplay: '.tip_display'
   };
 
 
@@ -58,6 +59,14 @@ var UIController = (function() {
       return percentage;
     },
 
+    displayTip: function(tipAmount) {
+      var element;
+
+      element = DOMstrings.tipDisplay;
+
+      document.querySelector(element).innerHTML = '$' + tipAmount;
+    },
+
     testing: function() {
       return this.getInput();
     }
@@ -94,7 +103,7 @@ var controller = (function(calcCtrl, UICtrl) {
 
     console.log(tip);
     // 3. Display the tip on UI
-
+    UICtrl.displayTip(tip);
   };
 
   return {
