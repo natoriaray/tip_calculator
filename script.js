@@ -67,8 +67,16 @@ var UIController = (function() {
       document.querySelector(element).innerHTML = '$' + tipAmount;
     },
 
-    testing: function() {
-      return this.getInput();
+    clearFields: function() {
+      var fields, fieldsArray;
+
+      fields = document.querySelectorAll(DOMstrings.inputBillAmount + ', ' + DOMstrings.inputExperience + ', ' + DOMstrings.inputNumberOfPeople);
+
+      fieldsArray = Array.prototype.slice.call(fields);
+
+      fieldsArray.forEach(function(current, index, array) {
+        current.value = "";
+      });
     }
   };
 })();
@@ -82,28 +90,23 @@ var controller = (function(calcCtrl, UICtrl) {
 
     document.querySelector(DOM.button).addEventListener('click', calculateTip);
 
-    document.addEventListener('keypress', function(event) {
-      if (event.keycode === 13 || event.which === 13) {
-        calculateTip();
-      }
-    });
   };
+
 
   var calculateTip = function() {
     var input, tip;
-
     // 1. Get input from fields
     input = UICtrl.getInput();
-    console.log(input);
 
     // 2. Calculate tip for each person
     percent = UICtrl.calcPercentage();
-    console.log(percent);
-    tip = calculateController.calcTip(input.billAmount, percent, input.numberOfPeople).toFixed(2);
+    tip = calcCtrl.calcTip(input.billAmount, percent, input.numberOfPeople).toFixed(2);
+    // 3. Clear input fields
+    UICtrl.clearFields();
 
-    console.log(tip);
-    // 3. Display the tip on UI
+    // 4. Display the tip on UI
     UICtrl.displayTip(tip);
+
   };
 
   return {
