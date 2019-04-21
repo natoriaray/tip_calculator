@@ -90,10 +90,16 @@ var controller = (function(calcCtrl, UICtrl) {
 
     document.querySelector(DOM.button).addEventListener('click', calculateTip);
 
+    $(document).unbind('keypress').bind('keypress', function (e) {
+      if (e.keycode === 13 || e.which === 13) {
+        calculateTip();
+  }
+});
   };
 
 
   var calculateTip = function() {
+    console.log('clicked');
     var input, tip;
     // 1. Get input from fields
     input = UICtrl.getInput();
