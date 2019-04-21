@@ -99,7 +99,6 @@ var controller = (function(calcCtrl, UICtrl) {
 
 
   var calculateTip = function() {
-    console.log('clicked');
     var input, tip;
     // 1. Get input from fields
     input = UICtrl.getInput();
